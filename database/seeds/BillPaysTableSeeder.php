@@ -1,8 +1,9 @@
 <?php
 
+use App\BillPay;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class BillPaysTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-		$this->call(BillPaysTableSeeder::class);
+		factory(BillPay::class, 20)->create();
     }
 }
