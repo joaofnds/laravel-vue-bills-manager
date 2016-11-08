@@ -9,7 +9,6 @@
 		<link rel="stylesheet" href="/css/app.css" type="text/css" media="all" />
     </head>
     <body>
-		<h3>Hello World!</h3>
 		<div id="app">
 			<router-view></router-view>
 		</div>

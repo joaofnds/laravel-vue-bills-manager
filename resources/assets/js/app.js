@@ -15,10 +15,10 @@ require('./bootstrap');
 
 Vue.use(VueRouter);
 // Vue.component('example', require('./components/Example.vue'));
-const ExampleComponent = require('./components/Example.vue');
+const LoginComponent = require('./components/Login.vue');
 
 const routes = [
-	{ path: '/hello', component: ExampleComponent }
+	{ path: '/login', component: LoginComponent }
 ]
 
 const router = new VueRouter({
