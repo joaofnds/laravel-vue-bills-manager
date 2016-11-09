@@ -46,7 +46,11 @@
         },
 		methods: {
 			login() {
-				console.log("login funcionando");
+				this.$http.post('http://laravel.app/api/token', this.user)
+				.then( function (response) {
+					window.localStorage.setItem('token', response.data.token);
+					this.$router.push('/app/bill-pays');
+				})
 			}
 		}
     }

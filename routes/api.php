@@ -17,10 +17,12 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
-Route::resource('bill_pays', 'BillPaysController', [
-	'exept' => [
-		'create', 'edit'
-	]
-]);
+Route::group(['middleware' => 'jwt.auth'], function() {
+	Route::resource('bill_pays', 'BillPaysController', [
+		'exept' => [
+			'create', 'edit'
+		]
+	]);
+});
 
 Route::post('/token', 'AuthenticateController@authenticate');

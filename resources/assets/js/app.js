@@ -16,15 +16,23 @@ require('./bootstrap');
 Vue.use(VueRouter);
 // Vue.component('example', require('./components/Example.vue'));
 const LoginComponent = require('./components/Login.vue');
+const AppComponent = require('./components/App.vue');
+const BillPayListComponent = require('./components/BillPaysList.vue');
 
 const routes = [
-	{ path: '/login', component: LoginComponent }
-]
+	{ path: '/login', name: 'auth.login', component: LoginComponent },
+	{ path: '/app', name: 'app', component: AppComponent,
+        children: [
+			{ path: 'bill-pays', name: 'bill-pay.list', component: BillPayListComponent }
+		]
+	}
+];
 
 const router = new VueRouter({
 	routes
-})
+});
+
 
 const app = new Vue({
 	router
-}).$mount('#app')
+}).$mount('#app');
