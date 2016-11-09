@@ -7,12 +7,12 @@
 					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 					<ul id="nav-mobile" class="right hide-on-med-and-dow">
 						<li v-for="o in links">
-                            <router-link :to="{ name: o.routeName}">{{ o.label }}</router-link>
+							<router-link :to="{path: o.routePath}">{{ o.label }}</router-link>
 						</li>
 					</ul>
 					<ul id="mobile-demo" class="side-nav">
 						<li v-for="o in links">
-                            <router-link :to="{ name: o.routeName}">{{ o.label }}</router-link>
+							<router-link :to="{path: o.routePath}">{{ o.label }}</router-link>
 						</li>
 					</ul>
 				</div>
@@ -27,7 +27,7 @@
         data() {
 			return {
 				links: [
-					{ label: 'Contas a pagar', routeName: "bill-pay.list" }
+					{ label: 'Contas a pagar', routePath: "/app/bill-pays" }
 				]
 			}
         },
